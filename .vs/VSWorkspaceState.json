@@ -1,6 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Assets",
+    "\\Assets\\Scenes"
   ],
+  "SelectedNode": "\\Assets\\HelloWorld.cs",
   "PreviewInSolutionExplorer": false
 }
