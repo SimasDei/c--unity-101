@@ -4,21 +4,20 @@ using UnityEngine;
 
 public class HelloWorld : MonoBehaviour
 {
+    int max = 1000;
     int min = 1;
     int guess = 500;
-    int max = 1000;
 
-    // Start is called before the first frame update
+    // Use this for initialization
     void Start()
     {
-        string title = "Number Wizard";
-
-        Debug.Log("Welcome to " + title);
-        Debug.Log("Pick a secret number");
-        Debug.Log("The highest can be " + max);
-        Debug.Log("Lowest: " + min);
-        Debug.Log("I'm gonna make a guess, tell me if the number is higher or lower");
-        Debug.Log("Push up: Higher!, Push Down: lower, Push ENTER: Correct!");
+        Debug.Log("G'day mate, welcome to numba wiz-ud...");
+        Debug.Log("Pick a number, don't tell me what it is...");
+        Debug.Log("The highest number you can pick is: " + max);
+        Debug.Log("The lowest number you can pick is: " + min);
+        Debug.Log("Tell me if your number is higher or lower than: " + guess);
+        Debug.Log("Push Up = Higher, Push Down = Lower, Push Enter = Correct");
+        max = max + 1;
     }
 
     // Update is called once per frame
@@ -26,19 +25,19 @@ public class HelloWorld : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            Debug.Log("Up arrow key was pressed.");
             min = guess;
+            guess = (max + min) / 2;
+            Debug.Log("Is it higher or lower than..." + guess);
         }
-
         else if (Input.GetKeyDown(KeyCode.DownArrow))
         {
-            Debug.Log("Down arrow key was pressed.");
+            max = guess;
+            guess = (max + min) / 2;
+            Debug.Log("Is it higher or lower than..." + guess);
         }
-
         else if (Input.GetKeyDown(KeyCode.Return))
         {
-            Debug.Log("Return arrow key was pressed.");
+            Debug.Log("I am a genius!");
         }
-
     }
 }
